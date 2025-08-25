@@ -3,7 +3,7 @@ building a safety compliance system that checks whether workers are wearing glov
 
 
 # Part 1: Gloved vs Ungloved Hand Detection
-
+ 
 ## Overview
 This project implements a safety compliance system for detecting whether workers are wearing gloves in factory environments. The system uses a fine-tuned YOLOv8s model to classify hands as either wearing gloves or not wearing gloves, providing real-time detection capabilities for workplace safety monitoring.
 
