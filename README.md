@@ -221,3 +221,72 @@ The project represents a complete end-to-end solution from data processing throu
 - **Training Platform:** Google Colab (Tesla T4 GPU)
 - **Development Time:** ~4 hours
 - **Achievement:** High-accuracy glove detection system ready for production deployment
+
+## How to Run Your Script
+
+### Prerequisites
+```bash
+pip install ultralytics opencv-python torch numpy matplotlib
+```
+
+### Quick Start
+1. Download the trained model (`best.pt`) and place it in the project directory
+2. Prepare input images in a folder (e.g., `input_images/`)
+3. Run the detection script:
+   ```bash
+   python detection_script.py --input input_images/
+   ```
+
+### Command Line Options
+```bash
+python detection_script.py --input INPUT_FOLDER [OPTIONS]
+```
+
+**Parameters:**
+- `--input`: Input folder containing .jpg images (required)
+- `--output`: Output folder for annotated images (default: `output/`)
+- `--logs`: Folder for JSON logs (default: `logs/`)  
+- `--confidence`: Detection confidence threshold (default: `0.5`)
+- `--model`: Path to model weights (default: `best.pt`)
+
+### Usage Examples
+```bash
+# Basic usage
+python detection_script.py --input test_images/
+
+# Custom output directories
+python detection_script.py --input factory_images/ --output results/ --logs detection_logs/
+
+# Adjust detection sensitivity
+python detection_script.py --input images/ --confidence 0.3
+
+# Complete example
+python detection_script.py --input images/ --output results/ --confidence 0.4 --model best.pt
+```
+
+### Output Structure
+```
+output/
+├── annotated_image1.jpg
+├── annotated_image2.jpg
+└── ...
+
+logs/
+├── image1.json
+├── image2.json
+└── ...
+```
+
+### Sample JSON Output
+```json
+{
+  "filename": "image1.jpg",
+  "detections": [
+    {
+      "label": "Wearing_Gloves",
+      "confidence": 0.92,
+      "bbox": [x1, y1, x2, y2]
+    }
+  ]
+}
+```
