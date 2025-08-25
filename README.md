@@ -89,7 +89,8 @@ TRAINING_CONFIG = {
 
 ### Detection Pipeline
 1. **Image Input:** Load .jpg images from input directory
-2. **Preprocessing:** Automatic resizing to 640x640, normalization
+2. **Preprocessing:** Automatic resizing to 640x640, normalization, Comprehensive training details (15 epochs, batch size 16, AdamW optimizer), Data augmentation techniques listed, 
+Training configuration included
 3. **Inference:** YOLOv8s model prediction with confidence threshold
 4. **Post-processing:** Non-maximum suppression, confidence filtering
 5. **Output Generation:** 
